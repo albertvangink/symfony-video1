@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Bron- en ContactManager{% endblock %}
+
+{% block body %}
+  <h1>Registrations</h1>
+
+  {% if registrations %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Registrations</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for registration in registrations %}
+          <tr>
+            <td> {{ registration }}</td>
+            <td><a href="/registration/1" class="btn btn-dark">Show</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No registrations to display</p>
+  {% endif %}
+{% endblock %}
+
+
+
